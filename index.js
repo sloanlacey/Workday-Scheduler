@@ -1,5 +1,4 @@
   var NowDate = new Date();
-//   moment().format('MMMM Do YYYY, h:mm:ss a');
   var eDisplayDate = document.getElementById('currentDay');
   eDisplayDate.innerHTML = NowDate;
 
@@ -18,3 +17,7 @@
     var saveIcon = $('<i>').addClass('far fa-save');
     saveBtn.append(saveIcon);
   }
+// Event Listeners
+  $('.saveBtn').click(function() {
+      alert('I have been clicked');
+  });
