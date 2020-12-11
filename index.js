@@ -46,22 +46,24 @@ renderRows();
     row.append(hourDisplay, textArea, saveBtn);
     var saveIcon = $('<i>').addClass('far fa-save');
     saveBtn.append(saveIcon);  
-    
+
+    var getTasks = localStorage.getItem(twentyFourHourTime[i]);
+    if (localStorage.key(i) === $('.textarea').attr('id')); {
+        textArea.text(JSON.parse(getTasks));
     }
+
+   }
+
 }
 
-  var getTasks = localStorage.getItem(twentyFourHourTime[i]);
-  if (localStorage.key(i) === $('.textarea').attr('id')) {
-      textArea.text(JSON.parse(getTasks));
-  }
+
 
 // Event listener for clicking any of the save buttons--it calls the function for storing the task list
 $('.saveBtn').click(dailyTasks);
 // Function for saving daily tasks in day planner
    function dailyTasks() {
-    // console.log('I have been clicked!');
-    const key = $(this).attr('id');
-    const value = $(this).siblings('textarea').val();
+    var key = $(this).attr('id');
+    var value = $(this).siblings('textarea').val();
     localStorage.setItem(key, JSON.stringify(value));
    }
 
