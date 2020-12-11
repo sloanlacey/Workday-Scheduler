@@ -8,26 +8,13 @@
   var nowTime = m.format('LTS');
   var nowHour = newDate.getHours();
 
-// Hour arrays for time display and for loops
 // Reference container in HTML
   var container = $('.container');
+// Hour arrays for time display local storage connections
   var businessHours = ['9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm'];
   var twentyFourHourTime = [9, 10, 11, 12, 13, 14, 15, 16, 17];
-// Call Functions
-  renderRows();
-
-
-
-// Event listener for clicking any of the save buttons--it calls the function for storing the task list
-  $('.saveBtn').click(dailyTasks);
-// Function for saving daily tasks in day planner
-   function dailyTasks() {
-    // console.log('I have been clicked!');
-    const key = $(this).attr('id');
-    const value = $(this).siblings('textarea').val();
-    localStorage.setItem(key, JSON.stringify(value));
-   }
-
+// Call render rows function at the beginning of the file so it always populates upon opening the page
+renderRows();
 
 // Render Rows
   function renderRows() {
@@ -59,10 +46,24 @@
     row.append(hourDisplay, textArea, saveBtn);
     var saveIcon = $('<i>').addClass('far fa-save');
     saveBtn.append(saveIcon);  
+    
+    }
 }
+
+  var getTasks = localStorage.getItem(twentyFourHourTime[i]);
+  if (localStorage.key(i) === $('.textarea').attr('id')) {
+      textArea.text(JSON.parse(getTasks));
   }
 
-
+// Event listener for clicking any of the save buttons--it calls the function for storing the task list
+$('.saveBtn').click(dailyTasks);
+// Function for saving daily tasks in day planner
+   function dailyTasks() {
+    // console.log('I have been clicked!');
+    const key = $(this).attr('id');
+    const value = $(this).siblings('textarea').val();
+    localStorage.setItem(key, JSON.stringify(value));
+   }
 
 
 
