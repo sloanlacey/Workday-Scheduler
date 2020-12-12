@@ -36,11 +36,11 @@ THEN the saved events persist
 
 # Home Page
 
-![Home Page]()
+![Home Page](https://github.com/sloanlacey/Workday-Scheduler/blob/main/Assets/Images/homepage.png)
 
 # Tasks Filled In
 
-![Tasks Filled In]()
+![Tasks Filled In](https://github.com/sloanlacey/Workday-Scheduler/blob/main/Assets/Images/tasksfilledin.png)
 
 # Technologies
 
@@ -48,4 +48,4 @@ This project was created with HTML, CSS & JavaScript
 
 # Author
 
-Sloan Lacey ([github.com/sloanlacey](github.com/sloanlacey))
+*Sloan Lacey ([github.com/sloanlacey](github.com/sloanlacey))
