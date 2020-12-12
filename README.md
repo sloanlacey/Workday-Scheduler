@@ -1,6 +1,6 @@
 # Workday-Scheduler
 
-Simple scheduling app using 3rd party API's. Users can enter tasks or events into each text field and save them independently. When the user has finished all of their tasks for the day they can clear out the entire list by clicking the 'clear' button.
+Simple scheduling app using 3rd party API's. Users can enter tasks or events into each text field and save them independently. The time slots will change colors depending on the time of day--grey for past hours, red for the current hour, and green for future hours. When the user has finished all of their tasks for the day they can clear out the entire list by clicking the 'clear' button.
 
 ### Table of Contents
 
