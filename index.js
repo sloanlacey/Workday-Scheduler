@@ -46,7 +46,9 @@ renderRows();
     row.append(hourDisplay, textArea, saveBtn);
     var saveIcon = $('<i>').addClass('far fa-save');
     saveBtn.append(saveIcon);  
-
+// The getTasks variable section needs to be inside the render rows function in order to work
+// If I had it as a separate function I would need it to be outside and called at the beginning of the JS file
+// This is what will get the items saved in locla storage to populate to the page upon refresh
     var getTasks = localStorage.getItem(twentyFourHourTime[i]);
     if (localStorage.key(i) === $('.textarea').attr('id')); {
         textArea.text(JSON.parse(getTasks));
@@ -56,8 +58,6 @@ renderRows();
 
 }
 
-
-
 // Event listener for clicking any of the save buttons--it calls the function for storing the task list
 $('.saveBtn').click(dailyTasks);
 // Function for saving daily tasks in day planner
@@ -65,6 +65,14 @@ $('.saveBtn').click(dailyTasks);
     var key = $(this).attr('id');
     var value = $(this).siblings('textarea').val();
     localStorage.setItem(key, JSON.stringify(value));
+   }
+// Clear button function that removes all items from local storage and reloads page
+$('.clear-button').click(clearTasks);
+   function clearTasks() {
+    var key = $(this).attr('id');
+    var value = $(this).siblings('textarea').val();  
+    localStorage.clear(key, value);
+    location.reload();
    }
 
 
